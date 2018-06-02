@@ -25,10 +25,10 @@ public class SparkReadOracleDemo {
                 .getOrCreate();
         Dataset<Row> jdbcDF = spark.read()
                 .format("jdbc")
-                .option("url", "jdbc:oracle:thin:@10.124.0.41:1521:ngact")
-                .option("dbtable", "tf_f_user")
-                .option("user", "UOP_ACT1")
-                .option("password", "cbss_UOP_ACT1")
+                .option("url", "jdbc:oracle:thin:@X.X.X.X:1521:ngact")
+                .option("dbtable", "test_table")
+                .option("user", "username")
+                .option("password", "password")
                 .load();
         jdbcDF.show();
         jdbcDF.createOrReplaceTempView("TEST_TABLE");
